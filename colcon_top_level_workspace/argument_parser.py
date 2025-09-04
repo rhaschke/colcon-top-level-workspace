@@ -99,7 +99,7 @@ def get_workspace_root():
             break  # no root path found
 
     if _root_path != Path.cwd():  # inform user about root path
-        print(f"Using workspace root {_root_path}")
+        print(f"Using workspace root {_root_path}", file=os.sys.stderr)
 
     marker = _root_path / ROOT_MARKER
     if not marker.is_file():
